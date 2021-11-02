@@ -13,7 +13,11 @@ class User extends Authenticatable
 
     protected $table = 'users';
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 
+        'email', 
+        'password',
+        'source',
+        'comment'
     ];
 
     protected $hidden = [
@@ -22,5 +26,9 @@ class User extends Authenticatable
 
     public function roles(){
         return $this->belongsToMany(Role::class);
+    }
+
+    public function contacts(){
+        return $this->hasMany(Contact::class);
     }
 }

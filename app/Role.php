@@ -9,6 +9,9 @@ class Role extends Model{
     use HasFactory;
 
     protected $table='roles';
+    protected $fillable = [
+        'name'
+    ];
 
     public function permissions(){
         return $this->belongsToMany(Permission::class);
