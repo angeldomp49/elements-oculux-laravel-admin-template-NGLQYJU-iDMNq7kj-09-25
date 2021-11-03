@@ -15,10 +15,12 @@ class CreateContactsTable extends Migration
     {
         Schema::create('contacts', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')
+            $table->foreignId('lead_id')
+                ->constrained('leads')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
             $table->foreignId('contact_type_id')
+                ->constrained('contact_types')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
             $table->text('value');

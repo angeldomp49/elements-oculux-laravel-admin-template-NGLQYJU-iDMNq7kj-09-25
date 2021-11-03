@@ -22,28 +22,53 @@
             <div class="body">
                 <p class="lead">Llena los datos para continuar</p>
                 <form class="form-auth-small m-t-20" action="{{ route('save') }}" method="post">
+                    @csrf 
+                    @method('PATCH')
+                    <div class="form-group">
+                        <label for="signin-email" class="control-label sr-only">Name</label>
+                        <input type="text" name="name" class="form-control round" id="signin-email" value=""
+                            placeholder="Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="signin-email" class="control-label sr-only">Last Name</label>
+                        <input type="text" name="last_name" class="form-control round" id="signin-email" value=""
+                            placeholder="Last Name">
+                    </div>
                     <div class="form-group">
                         <label for="signin-email" class="control-label sr-only">Email</label>
-                        <input type="email" class="form-control round" id="signin-email" value="user@domain.com"
+                        <input type="email" name="email" class="form-control round" id="signin-email" value=""
                             placeholder="Email">
                     </div>
                     <div class="form-group">
-                        <label for="signin-password" class="control-label sr-only">Password</label>
-                        <input type="password" class="form-control round" id="signin-password" value="thisisthepassword"
-                            placeholder="Password">
+                        <label for="signin-email" class="control-label sr-only">Address</label>
+                        <input type="text" name="address" class="form-control round" id="signin-email" value=""
+                            placeholder="Address">
                     </div>
-                    <div class="form-group clearfix">
-                        <label class="fancy-checkbox element-left">
-                            <input type="checkbox">
-                            <span>Remember me</span>
-                        </label>
+                    <div class="form-group">
+                        <label for="signin-email" class="control-label sr-only">Country</label>
+                        <input type="text" name="country" class="form-control round" id="signin-email" value=""
+                            placeholder="Country">
                     </div>
-                    <a href="{{route('mypage.index')}}" class="btn btn-primary btn-round btn-block">LOGIN</a>
-                    <div class="bottom">
-                        <span class="helper-text m-b-10"><i class="fa fa-lock"></i> <a
-                                href="{{route('authentication.forgotpassword')}}">Forgot password?</a></span>
-                        <span>Don't have an account? <a href="page-register.html">Register</a></span>
+                    <div class="form-group">
+                        <label for="signin-email" class="control-label sr-only">Source</label>
+                        <input type="text" name="source" class="form-control round" id="signin-email" value=""
+                            placeholder="Source">
                     </div>
+
+                    <div class="form-group">
+                        <label for="signin-email" class="control-label sr-only">Phone</label>
+                        <input type="text" name="phone" class="form-control round" id="signin-email" value=""
+                            placeholder="Phone">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="signin-email" class="control-label sr-only">Cell Phone</label>
+                        <input type="text" name="cellphone" class="form-control round" id="signin-email" value=""
+                            placeholder="Cell Phone">
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-round btn-block">LOGIN</button>
+                    
                 </form>
             </div>
         </div>
@@ -54,8 +79,12 @@
 
 @section('page-styles')
 
-@stop
+@endsection
 
 @section('page-script')
-
-@stop
+    @if(session('sended'))
+        <script>
+            alert('sended');
+        </script>
+    @endif
+@endsection

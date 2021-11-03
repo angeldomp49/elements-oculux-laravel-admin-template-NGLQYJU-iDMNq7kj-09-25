@@ -14,7 +14,7 @@ class CreateLeadsTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('last_name', 100);
-            $table->string('address', 100);
+            $table->string('address', 255);
             $table->string('country', 100);
             $table->string('source', 100);
 
