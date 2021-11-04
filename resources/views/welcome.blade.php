@@ -28,43 +28,99 @@
                         <label for="signin-email" class="control-label sr-only">Name</label>
                         <input type="text" name="name" class="form-control round" id="signin-email" value=""
                             placeholder="Name">
+                        @error('name')
+                            <ul class="parsley-errors-list filled text-left">
+                                <li class="parsley-required">
+                                    {{$message}}
+                                </li>
+                            </ul>
+                        @enderror
                     </div>
                     <div class="form-group">
                         <label for="signin-email" class="control-label sr-only">Last Name</label>
                         <input type="text" name="last_name" class="form-control round" id="signin-email" value=""
                             placeholder="Last Name">
+                        @error('last_name')
+                            <ul class="parsley-errors-list filled text-left">
+                                <li class="parsley-required">
+                                    {{$message}}
+                                </li>
+                            </ul>
+                        @enderror
                     </div>
                     <div class="form-group">
                         <label for="signin-email" class="control-label sr-only">Email</label>
                         <input type="email" name="email" class="form-control round" id="signin-email" value=""
                             placeholder="Email">
+                        @error('email')
+                            <ul class="parsley-errors-list filled text-left">
+                                <li class="parsley-required">
+                                    {{$message}}
+                                </li>
+                            </ul>
+                        @enderror
                     </div>
                     <div class="form-group">
                         <label for="signin-email" class="control-label sr-only">Address</label>
                         <input type="text" name="address" class="form-control round" id="signin-email" value=""
                             placeholder="Address">
+                        @error('address')
+                            <ul class="parsley-errors-list filled text-left">
+                                <li class="parsley-required">
+                                    {{$message}}
+                                </li>
+                            </ul>
+                        @enderror
                     </div>
                     <div class="form-group">
                         <label for="signin-email" class="control-label sr-only">Country</label>
                         <input type="text" name="country" class="form-control round" id="signin-email" value=""
                             placeholder="Country">
+                        @error('country')
+                            <ul class="parsley-errors-list filled text-left">
+                                <li class="parsley-required">
+                                    {{$message}}
+                                </li>
+                            </ul>
+                        @enderror
                     </div>
                     <div class="form-group">
                         <label for="signin-email" class="control-label sr-only">Source</label>
                         <input type="text" name="source" class="form-control round" id="signin-email" value=""
                             placeholder="Source">
+                        @error('source')
+                            <ul class="parsley-errors-list filled text-left">
+                                <li class="parsley-required">
+                                    {{$message}}
+                                </li>
+                            </ul>
+                        @enderror
                     </div>
 
                     <div class="form-group">
                         <label for="signin-email" class="control-label sr-only">Phone</label>
                         <input type="text" name="phone" class="form-control round" id="signin-email" value=""
                             placeholder="Phone">
+                        @error('phone')
+                            <ul class="parsley-errors-list filled text-left">
+                                <li class="parsley-required">
+                                    {{$message}}
+                                </li>
+                            </ul>
+                        @enderror
                     </div>
 
                     <div class="form-group">
                         <label for="signin-email" class="control-label sr-only">Cell Phone</label>
                         <input type="text" name="cellphone" class="form-control round" id="signin-email" value=""
                             placeholder="Cell Phone">
+                        @error('cellphone')
+                            <ul class="parsley-errors-list filled text-left">
+                                <li class="parsley-required">
+                                    {{$message}}
+                                </li>
+                            </ul>
+                        @enderror
                     </div>
                     
                     <button type="submit" class="btn btn-primary btn-round btn-block">LOGIN</button>
@@ -78,11 +134,11 @@
 @stop
 
 @section('page-styles')
-
+    <link rel="stylesheet" href="{{ asset('assets/vendor/parsleyjs/css/parsley.css') }}">
 @endsection
 
 @section('page-script')
-    @if(session('sended'))
+    @if(session('registered'))
         <script>
             alert('sended');
         </script>

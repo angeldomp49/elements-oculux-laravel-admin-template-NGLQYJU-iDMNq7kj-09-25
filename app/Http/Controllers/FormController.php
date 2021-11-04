@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Form1Request;
 use App\Models\Contact;
+use App\Models\ContactType;
 use App\Models\Lead;
 use Illuminate\Http\Request;
 
@@ -11,7 +13,7 @@ class FormController extends Controller{
         return view('welcome');
     }
 
-    public function save(Request $request){
+    public function save(Form1Request $request){
         $lead = Lead::create([
             'name' => $request->name,
             'email' => $request->email,
@@ -23,13 +25,13 @@ class FormController extends Controller{
 
         Contact::create([
             'lead_id' => $lead->id,
-            'contact_type_id' => 1,
+            'contact_type_id' => ContactType::PHONE,
             'value' => $request->phone
         ]);
 
         Contact::create([
             'lead_id' => $lead->id,
-            'contact_type_id' => 2,
+            'contact_type_id' => ContactType::CELLPHONE,
             'value' => $request->cellphone
         ]);
 

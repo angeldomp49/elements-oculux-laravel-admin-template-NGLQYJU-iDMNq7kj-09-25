@@ -5,6 +5,8 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
+use App\Models\ContactType as Model;
+
 class ContactType extends Seeder
 {
     
@@ -13,19 +15,19 @@ class ContactType extends Seeder
         DB::table('contact_types')
             ->insert([
                 [
-                    'id' => 1,
+                    'id' => Model::PHONE,
                     'name' => 'phone'
                 ],
                 [
-                    'id' => 2,
+                    'id' => Model::CELLPHONE,
                     'name' => 'cellphone'
                 ],
                 [
-                    'id' => 3,
+                    'id' => Model::FACEBOOK,
                     'name' => 'Facebook'
                 ],
                 [
-                    'id' => 4,
+                    'id' => Model::INSTAGRAM,
                     'name' => 'Instagram'
                 ]
             ]);
