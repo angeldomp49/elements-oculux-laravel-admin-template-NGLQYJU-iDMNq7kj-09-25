@@ -28,11 +28,11 @@
                     </div>
                     <div class="form-group">
                         <label for="signin-email" class="control-label sr-only">Email</label>
-                        <input type="email" class="form-control round" id="signin-email" value="user@domain.com" placeholder="Email">
+                        <input type="email" class="form-control round" name="email" id="signin-email" value="{{ old('email') }}" placeholder="Email">
                     </div>
                     <div class="form-group">
                         <label for="signin-password" class="control-label sr-only">Password</label>
-                        <input type="password" class="form-control round" id="signin-password" value="thisisthepassword" placeholder="Password">
+                        <input type="password" class="form-control round" name="password" id="signin-password" placeholder="Password">
                     </div>
                     <div class="form-group clearfix">
                         <label class="fancy-checkbox element-left">
@@ -40,7 +40,7 @@
                             <span>Remember me</span>
                         </label>								
                     </div>
-                    <a href="{{route('mypage.index')}}" class="btn btn-primary btn-round btn-block">LOGIN</a>
+                    <button type="submit" class="btn btn-primary btn-round btn-block">LOGIN</button>
                     <div class="mt-4">
                         <span class="helper-text m-b-10"><i class="fa fa-lock"></i> <a href="{{route('authentication.forgotpassword')}}">Forgot password?</a></span>
                         <span>Don't have an account? <a href="{{ route('register') }}">Register</a></span>

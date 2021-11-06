@@ -133,7 +133,12 @@
                 <ul class="nav navbar-nav">
                     <li><a href="javascript:void(0);" class="search_toggle icon-menu" title="Search Result"><i class="icon-magnifier"></i></a></li>
                     <li><a href="javascript:void(0);" class="right_toggle icon-menu" title="Right Menu"><i class="icon-bubbles"></i><span class="notification-dot bg-pink">2</span></a></li>
-                    <li><a href="{{route('authentication.login')}}" class="icon-menu"><i class="icon-power"></i></a></li>
+                    <li>
+                        <form action="{{ route('logout') }}" method="post" style="display:contents;">
+                            @csrf
+                            <button class="icon-menu bg-transparent border-0"><i class="icon-power"></i></button>
+                        </form>
+                    </li>
                 </ul>
             </div>
         </div>

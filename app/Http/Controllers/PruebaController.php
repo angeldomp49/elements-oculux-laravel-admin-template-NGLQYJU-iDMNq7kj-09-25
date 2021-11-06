@@ -8,6 +8,6 @@ use Illuminate\Support\Facades\Auth;
 class PruebaController extends Controller
 {
     public function check(){
-        return route('register');
+        return Auth::check();
     }
 }

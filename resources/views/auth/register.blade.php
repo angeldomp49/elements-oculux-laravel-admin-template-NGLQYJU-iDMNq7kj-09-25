@@ -32,7 +32,7 @@
                     <div class="form-group">                            
                         <input type="password" class="form-control round" name="password_confirmation" placeholder="Password">
                     </div>
-                    <a href="{{route('mypage.index')}}" class="btn btn-primary btn-round btn-block">Register</a>                                
+                    <button type="submit" class="btn btn-primary btn-round btn-block">Register</button>                                
                 </form>
                 <div class="separator-linethrough"><span>OR</span></div>
                 <button class="btn btn-round btn-signin-social"><i class="fa fa-facebook-official facebook-color"></i> Sign in with Facebook</button>
