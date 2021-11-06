@@ -74,20 +74,19 @@
                     </div>            
                     <div class="col-md-6 col-sm-12 text-right hidden-xs">
                         <div class="d-flex flex-row-reverse">
-                            <a href="https://themeforest.net/user/puffintheme/portfolio" class="btn btn-success ml-1 mr-1" ><i class="icon-basket"></i> Buy Now</a>
-                            <a href="javascript:void(0);" class="btn btn-primary" >Go</a>
-                            <select class="custom-select w100 mr-3">
-                                <option selected="">USA</option>
-                                <option value="2">India</option>
-                                <option value="3">Australia</option>
+                            <!-- <a href="https://themeforest.net/user/puffintheme/portfolio" class="btn btn-success ml-1 mr-1" ><i class="icon-basket"></i> Buy Now</a>
+                            <a href="javascript:void(0);" class="btn btn-primary" >Go</a> -->
+                            <select id="order_by" class="custom-select w100 mr-3">
+                                <option selected="" value="">Order By</option>
+                                <option value="id">ID</option>
+                                <option value="name">Name</option>
+                                <option value="email">email</option>
                             </select>
-                            <select class="custom-select w150 mr-3">                                
-                                <option value="2">Last 3 Days</option>
-                                <option selected="">Last 7 Days</option>
-                                <option value="2">Last 15 Days</option>
-                                <option value="2">Last 1 Month</option>
-                                <option value="2">Last 1 Year</option>
-                            </select>
+                            <!-- <select id="direction" class="custom-select w100 mr-3">
+                                <option selected="" value="">Direction</option>
+                                <option value="desc">Desc</option>
+                                <option value="asc">ASC</option>
+                            </select> -->
                         </div>
                     </div>
                 </div>
@@ -122,6 +121,17 @@
 	})();
 </script>
 <!--End of Tawk.to Script-->
+
+<script>
+    jQuery(function($){
+        $('#order_by').change(function(event){
+            let optionSelected = $(this).val();
+            let url = "{{ route('lead.order_by', [ 'attribute' => '' ]) }}";
+
+            window.location.href = url + '/' + optionSelected;
+        });
+    });
+</script>
 
 </body>
 </html>

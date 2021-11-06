@@ -5,7 +5,7 @@
                 <a href="index.html"><img src="../assets/images/icon.svg" alt="Oculux Logo" class="img-fluid logo"></a>
                 <button type="button" class="btn-toggle-offcanvas"><i class="lnr lnr-menu fa fa-bars"></i></button>
             </div>
-            <ul class="nav navbar-nav">
+            <!-- <ul class="nav navbar-nav">
                 <li class="dropdown">
                     <a href="javascript:void(0);" class="dropdown-toggle icon-menu" data-toggle="dropdown">
                         <i class="icon-envelope"></i>
@@ -117,10 +117,16 @@
                         <a class="dropdown-item pt-2 pb-2" href="#"><img src="../assets/images/flag/france.svg " class="w20 mr-2 rounded-circle"> French</a>
                     </div>
                 </li>
-                <li><a href="javascript:void(0);" class="megamenu_toggle icon-menu" title="Mega Menu">Mega</a></li>
-                <li class="p_social"><a href="{{route('extra.social')}}" class="social icon-menu" title="News">Social</a></li>
-                <li class="p_news"><a href="{{route('extra.news')}}" class="news icon-menu" title="News">News</a></li>
-            </ul>
+                <li>
+                    <a href="javascript:void(0);" class="megamenu_toggle icon-menu" title="Mega Menu">Mega</a>
+                </li>
+                <li class="p_social">
+                    <a href="{{route('extra.social')}}" class="social icon-menu" title="News">Social</a>
+                </li>
+                <li class="p_news">
+                    <a href="{{route('extra.news')}}" class="news icon-menu" title="News">News</a>
+                </li>
+            </ul> -->
         </div>        
         <div class="navbar-right">
             <div id="navbar-menu">

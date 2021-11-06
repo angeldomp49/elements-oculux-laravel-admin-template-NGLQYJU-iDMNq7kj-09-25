@@ -21,9 +21,8 @@
         <div class="card">
             <div class="body">
                 <p class="lead">Llena los datos para continuar</p>
-                <form class="form-auth-small m-t-20" action="{{ route('save') }}" method="post">
+                <form class="form-auth-small m-t-20" action="{{ route('lead.store') }}" method="post">
                     @csrf 
-                    @method('PATCH')
                     <div class="form-group">
                         <label for="signin-email" class="control-label sr-only">Name</label>
                         <input type="text" name="name" class="form-control round" id="signin-email" value=""

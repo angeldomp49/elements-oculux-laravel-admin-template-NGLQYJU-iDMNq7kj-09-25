@@ -12,9 +12,8 @@
                         <th>ID</th>
                         <th>Name</th>
                         <th>Email</th>
-                        <th>View</th>
-                        <!-- <th>Edit</th> -->
-                        <th>Delete</th>
+                        <th>Restore</th>
+                        <th>Delete Permanently</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -30,13 +29,14 @@
                                 <p class="mb-0">{{ $lead->email }}</p>
                             </td>
                             <td>
-                                <a href="{{ route('lead.show', [ 'lead' => $lead->id ]) }}" class="btn btn-primary"><span class="ti-id-badge"></span></a>
+                                <form action="{{ route('lead.restore', [ 'lead' => $lead->id ]) }}" method="post" style="display:contents;">
+                                    @csrf
+                                    @method('PATCH')
+                                    <button type="submit" class="btn btn-info"><span class="fa fa-refresh"></span></button>
+                                </form>                            
                             </td>
-                            <!-- <td>
-                                <a href="{{ route('lead.edit', [ 'lead' => $lead->id ]) }}" class="btn btn-warning"><span class="ti-pencil"></span></a>
-                            </td> -->
                             <td>
-                                <form action="{{ route('lead.destroy', [ 'lead' => $lead->id ]) }}" method="post" style="display:contents;">
+                                <form action="{{ route('lead.delete_permanently', [ 'lead' => $lead->id ]) }}" method="post" style="display:contents;">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-danger"><span class="ti-trash"></span></button>

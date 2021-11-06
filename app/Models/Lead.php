@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use App\Models\ContactType;
 
 class Lead extends Model{
     use HasFactory, SoftDeletes;
@@ -23,4 +24,5 @@ class Lead extends Model{
     public function contacts(){
         return $this->hasMany(Contact::class);
     }
+
 }

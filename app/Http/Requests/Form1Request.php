@@ -26,7 +26,7 @@ class Form1Request extends FormRequest
         return [
             'name' => 'required|max:100',
             'last_name'=> 'nullable|max:100',
-            'email'=> 'required|email|max:100',
+            'email'=> 'required|email|max:100|unique:leads',
             'address' => 'nullable|max:255',
             'country' => 'nullable|max:100',
             'source' => 'nullable|max:100',

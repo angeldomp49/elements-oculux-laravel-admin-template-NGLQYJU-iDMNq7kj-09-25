@@ -1,5 +1,7 @@
 <?php
 use Illuminate\Support\Facades\Route;
+
+use App\Http\Controllers\ComponentsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -59,20 +61,20 @@ Route::get('icon/themify',                      'IconController@themify')->name(
 
 /* Components  */
 Route::get('components', function ()            { return redirect('components/bootstrap'); });
-Route::get('components/bootstrap',              'ComponentsController@bootstrap')->name('components.bootstrap');
-Route::get('components/typography',             'ComponentsController@typography')->name('components.typography');
-Route::get('components/colors',                 'ComponentsController@colors')->name('components.colors');
-Route::get('components/buttons',                'ComponentsController@buttons')->name('components.buttons');
-Route::get('components/tabs',                   'ComponentsController@tabs')->name('components.tabs');
-Route::get('components/progressbars',           'ComponentsController@progressbars')->name('components.progressbars');
-Route::get('components/modals',                 'ComponentsController@modals')->name('components.modals');
-Route::get('components/notifications',          'ComponentsController@notifications')->name('components.notifications');
-Route::get('components/dialogs',                'ComponentsController@dialogs')->name('components.dialogs');
-Route::get('components/listgroup',              'ComponentsController@listgroup')->name('components.listgroup');
-Route::get('components/mediaobject',            'ComponentsController@mediaobject')->name('components.mediaobject');
-Route::get('components/nestable',               'ComponentsController@nestable')->name('components.nestable');
-Route::get('components/rangesliders',           'ComponentsController@rangesliders')->name('components.rangesliders');
-Route::get('components/helperclass',            'ComponentsController@helperclass')->name('components.helperclass');
+Route::get('components/bootstrap',              [ ComponentsController::class, 'bootstrap' ])->name('components.bootstrap');
+Route::get('components/typography',             [ ComponentsController::class, 'typography' ])->name('components.typography');
+Route::get('components/colors',                 [ ComponentsController::class, 'colors' ])->name('components.colors');
+Route::get('components/buttons',                [ ComponentsController::class, 'buttons' ])->name('components.buttons');
+Route::get('components/tabs',                   [ ComponentsController::class, 'tabs' ])->name('components.tabs');
+Route::get('components/progressbars',           [ ComponentsController::class, 'progressbars' ])->name('components.progressbars');
+Route::get('components/modals',                 [ ComponentsController::class, 'modals' ])->name('components.modals');
+Route::get('components/notifications',          [ ComponentsController::class, 'notifications' ])->name('components.notifications');
+Route::get('components/dialogs',                [ ComponentsController::class, 'dialogs' ])->name('components.dialogs');
+Route::get('components/listgroup',              [ ComponentsController::class, 'listgroup' ])->name('components.listgroup');
+Route::get('components/mediaobject',            [ ComponentsController::class, 'mediaobject' ])->name('components.mediaobject');
+Route::get('components/nestable',               [ ComponentsController::class, 'nestable' ])->name('components.nestable');
+Route::get('components/rangesliders',           [ ComponentsController::class, 'rangesliders' ])->name('components.rangesliders');
+Route::get('components/helperclass',            [ ComponentsController::class, 'helperclass' ])->name('components.helperclass');
 
 /* Forms  */
 Route::get('forms', function ()                 { return redirect('forms/basic'); });

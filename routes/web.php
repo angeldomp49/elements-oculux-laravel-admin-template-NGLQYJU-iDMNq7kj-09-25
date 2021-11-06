@@ -1,16 +1,22 @@
 <?php
 
-use App\Http\Controllers\DataTableController;
-use App\Http\Controllers\FormController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LeadController;
 
-Route::get('/form1', [ FormController::class, 'index' ]);
+Route::middleware('auth')
+    ->group(function(){
+        Route::resource('/lead', LeadController::class );
+        Route::get('/lead/order_by/{attribute?}', [ LeadController::class, 'orderBy' ])
+            ->name('lead.order_by');
 
-Route::patch('/save', [ FormController::class, 'save' ])
-    ->name('save');
+        Route::get('/lead/trashed/all', [ LeadController::class, 'trashed' ])
+            ->name('leads.trashed');
 
-Route::get('/leads/dashboard', [ DataTableController::class, 'dashboard' ])
-    ->name('dashboard');
-    //->middleware('auth');
+        Route::delete('/lead/trashed/delete_permanently/{lead}', [ LeadController::class,'deletePermanently' ])
+            ->name('lead.delete_permanently');
+
+        Route::patch('/lead/trashed/restore/{lead}', [ LeadController::class,'restore' ])
+            ->name('lead.restore');
+    });
 
 include(__DIR__ . '/demo.php');
