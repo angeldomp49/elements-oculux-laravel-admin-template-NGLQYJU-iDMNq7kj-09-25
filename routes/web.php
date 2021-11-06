@@ -3,6 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LeadController;
 
+Route::get('/', function () {
+    return view('welcome');
+});
+
 Route::middleware('auth')
     ->group(function(){
         Route::resource('/lead', LeadController::class );
@@ -19,4 +23,6 @@ Route::middleware('auth')
             ->name('lead.restore');
     });
 
-include(__DIR__ . '/demo.php');
+require(__DIR__ . '/demo.php');
+require(__DIR__.'/auth.php');
+require(__DIR__.'/pruebas.php');

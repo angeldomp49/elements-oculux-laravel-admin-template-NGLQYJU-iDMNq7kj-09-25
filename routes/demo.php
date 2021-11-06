@@ -2,6 +2,8 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\ComponentsController;
+use App\Http\Controllers\AuthenticationController;
+use App\Http\Controllers\MypageController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,20 +15,20 @@ use App\Http\Controllers\ComponentsController;
 |
 */
 
-Route::get('/', function () { 
-    return redirect('mypage/index'); 
-});
+// Route::get('/', function () { 
+//     return redirect('mypage/index'); 
+// });
 
 /* My Page */
 Route::get('mypage', function ()                { return redirect('mypage/index'); });
-Route::get('mypage/index',                      'MypageController@index')->name('mypage.index');
-Route::get('mypage/index4',                     'MypageController@index4')->name('mypage.index4');
-Route::get('mypage/index5',                     'MypageController@index5')->name('mypage.index5');
-Route::get('mypage/index6',                     'MypageController@index6')->name('mypage.index6');
-Route::get('mypage/index7',                     'MypageController@index7')->name('mypage.index7');
-Route::get('mypage/index8',                     'MypageController@index8')->name('mypage.index8');
-Route::get('mypage/index9',                     'MypageController@index9')->name('mypage.index9');
-Route::get('mypage/index10',                    'MypageController@index10')->name('mypage.index10');
+Route::get('mypage/index',                      [ MypageController::class, 'index'])->name('mypage.index');
+Route::get('mypage/index4',                     [ MypageController::class, 'index4'])->name('mypage.index4');
+Route::get('mypage/index5',                     [ MypageController::class, 'index5'])->name('mypage.index5');
+Route::get('mypage/index6',                     [ MypageController::class, 'index6'])->name('mypage.index6');
+Route::get('mypage/index7',                     [ MypageController::class, 'index7'])->name('mypage.index7');
+Route::get('mypage/index8',                     [ MypageController::class, 'index8'])->name('mypage.index8');
+Route::get('mypage/index9',                     [ MypageController::class, 'index9'])->name('mypage.index9');
+Route::get('mypage/index10',                    [ MypageController::class, 'index10'])->name('mypage.index10');
 
 /* My Page */
 Route::get('dashboard', function ()             { return redirect('dashboard/index2'); });
@@ -130,13 +132,13 @@ Route::get('pages/pricing',                     'PagesController@pricing')->name
 
 /* Authentication  */
 Route::get('authentication', function ()        { return redirect('authentication/login'); });
-Route::get('authentication/login',              'AuthenticationController@login')->name('authentication.login');
-Route::get('authentication/login2',             'AuthenticationController@login2')->name('authentication.login2');
-Route::get('authentication/register',           'AuthenticationController@register')->name('authentication.register');
-Route::get('authentication/forgotpassword',     'AuthenticationController@forgotpassword')->name('authentication.forgotpassword');
-Route::get('authentication/page404',            'AuthenticationController@page404')->name('authentication.page404');
-Route::get('authentication/maintenance',        'AuthenticationController@maintenance')->name('authentication.maintenance');
-Route::get('authentication/comingsoon',         'AuthenticationController@comingsoon')->name('authentication.comingsoon');
+Route::get('authentication/login',              [ AuthenticationController::class, 'login' ])->name('authentication.login');
+Route::get('authentication/login2',             [ AuthenticationController::class, 'login2' ])->name('authentication.login2');
+Route::get('authentication/register',           [ AuthenticationController::class, 'register' ])->name('authentication.register');
+Route::get('authentication/forgotpassword',     [ AuthenticationController::class, 'forgotpassword' ])->name('authentication.forgotpassword');
+Route::get('authentication/page404',            [ AuthenticationController::class, 'page404' ])->name('authentication.page404');
+Route::get('authentication/maintenance',        [ AuthenticationController::class, 'maintenance' ])->name('authentication.maintenance');
+Route::get('authentication/comingsoon',         [ AuthenticationController::class, 'comingsoon' ])->name('authentication.comingsoon');
 
 
 /* Extra  */
