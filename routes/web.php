@@ -14,7 +14,7 @@ Route::middleware('auth')
             ->name('lead.order_by');
 
         Route::get('/lead/trashed/all', [ LeadController::class, 'trashed' ])
-            ->name('leads.trashed');
+            ->name('lead.trashed');
 
         Route::delete('/lead/trashed/delete_permanently/{lead}', [ LeadController::class,'deletePermanently' ])
             ->name('lead.delete_permanently');

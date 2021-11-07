@@ -2,7 +2,9 @@
     <div class="container-fluid">
         <div class="navbar-left">
             <div class="navbar-btn">
-                <a href="index.html"><img src="../assets/images/icon.svg" alt="Oculux Logo" class="img-fluid logo"></a>
+                <a href="{{ route('lead.index') }}">
+                    <img src="{{ asset('../assets/images/icon.svg') }}" alt="Oculux Logo" class="img-fluid logo">
+                </a>
                 <button type="button" class="btn-toggle-offcanvas"><i class="lnr lnr-menu fa fa-bars"></i></button>
             </div>
             <!-- <ul class="nav navbar-nav">
@@ -132,6 +134,7 @@
             <div id="navbar-menu">
                 <ul class="nav navbar-nav">
                     <li><a href="javascript:void(0);" class="search_toggle icon-menu" title="Search Result"><i class="icon-magnifier"></i></a></li>
+                    <li><a href="{{ route('lead.trashed') }}">trashed</a></li>
                     <li><a href="javascript:void(0);" class="right_toggle icon-menu" title="Right Menu"><i class="icon-bubbles"></i><span class="notification-dot bg-pink">2</span></a></li>
                     <li>
                         <form action="{{ route('logout') }}" method="post" style="display:contents;">

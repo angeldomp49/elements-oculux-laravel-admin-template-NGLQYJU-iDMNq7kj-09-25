@@ -1,6 +1,8 @@
 <div id="left-sidebar" class="sidebar">
     <div class="navbar-brand">
-        <a href="index.html"><img src="../assets/images/icon.svg" alt="Oculux Logo" class="img-fluid logo"><span>Oculux</span></a>
+        <a href="{{ route('lead.index') }}">
+            <img src="{{ asset('../assets/images/icon.svg') }}" alt="Oculux Logo" class="img-fluid logo"><span>Oculux</span>
+        </a>
         <button type="button" class="btn-toggle-offcanvas btn btn-sm float-right"><i class="lnr lnr-menu fa fa-chevron-circle-left"></i></button>
     </div>
     <div class="sidebar-scroll">
